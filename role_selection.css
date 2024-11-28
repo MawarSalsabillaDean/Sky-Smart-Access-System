@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(75deg, rgb(232, 245, 253) 0%, rgb(232, 245, 253) 50%, rgb(252, 253, 255) 100%);
+}
+
+.content {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    height: 90px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 45px;
+    font-weight: 500;
+    margin-bottom: 30px; 
+}
+
+.button-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.role-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 200px;
+    height: 260px;
+}
+
+.role-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.icon {
+    margin-top: 30px;
+    width: 180px;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin-top: 20px;
+        padding: 10px; /* Add padding around content to avoid touching the screen edges */
+    }
+
+    .logo {
+        height: 60px; /* Reduce the size of the logo */
+    }
+
+    h1 {
+        font-size: 18px; /* Reduce the font size */
+        margin-top: 20px; /* Reduce spacing */
+        margin-bottom: 20px; /* Reduce spacing */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 20px; /* Reduce the gap between buttons */
+        margin-right: 30px;
+
+    }
+
+    .role-button {
+        width: 100%; /* Make button width responsive to container width */
+        height: auto; /* Make height auto to adjust to content */
+        padding: 15px; /* Reduce padding */
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .role-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .icon {
+        width: 140px; /* Reduce the width of icons */
+        height: 120px; /* Reduce the height of icons */
+        margin-top: 20px; /* Adjust margin */
+        margin-bottom: 5px; /* Adjust bottom margin */
+    }
+}

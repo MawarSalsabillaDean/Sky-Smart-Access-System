@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Select User Type</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="role_selection.css">
+
+</head>
+<body>
+<div class="content">
+    <img src="pictures/SSA logo.png" alt="Sky Smart Access" class="logo">
+
+    <h1>Select User Type</h1>
+
+    <div class="button-container">
+
+        <div class="role-button" id="adminButton" onclick="redirectToAdmin()">
+            <img src="pictures/admin_icon.svg" alt="Admin Icon" class="icon">
+            <p>Admin</p>
+
+        </div>
+        <div class="role-button" id="residentButton" onclick="redirectToResident()">
+            <img src="pictures/residents_icon.svg" alt="Residents Icon" class="icon">
+            <p>Residents</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function redirectToAdmin() {
+        window.location.href = 'admin_login.php';
+    }
+
+    function redirectToResident() {
+        window.location.href = 'resident_login.php';
+    }
+</script> 
+
+</body>
+</html>

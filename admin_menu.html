@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="admin_menu.css">
+</head>
+<body>
+    <div class="container swiper">
+        <div class="slider-wrapper">
+            <div class="card-list swiper-wrapper">
+                <div class="card-item swiper-slide">
+                    <img src="pictures/dashboard.png" alt="Menu Image" class="menu-image-dashboard">
+                    <h2 class="menu-title">Admin Dashboard</h2>
+                    <p class="menu-desc">View user last login record.</p>
+                    <button class="menu-button" onclick="goToPage('admin_dashboard.php')">Let's Go!</button>
+                </div>
+                <div class="card-item swiper-slide">
+                    <img src="pictures/users.png" alt="Menu Image" class="menu-image-profile">
+                    <h2 class="menu-title">Users Management</h2>
+                    <p class="menu-desc">View, edit, and delete user profiles.</p>
+                    <button class="menu-button" onclick="goToPage('userdata_management.php')">Let's Go!</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="pictures/visitors.png" alt="Menu Image" class="menu-image">
+                    <h2 class="menu-title">Visitor Management</h2>
+                    <p class="menu-desc">Track and manage visitors records.</p>
+                    <button class="menu-button" onclick="goToPage('visitor_management.php')">Let's Go!</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="pictures/vehicles.png" alt="Menu Image" class="menu-image">
+                    <h2 class="menu-title">Parking Management</h2>
+                    <p class="menu-desc">Assign parking and track vehicle details.</p>
+                    <button class="menu-button" onclick="goToPage('parking_management.php')">Let's Go!</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="pictures/amenities2.png" alt="Menu Image" class="menu-image-amenities">
+                    <h2 class="menu-title">Amenities Access Management</h2>
+                    <p class="menu-desc">Monitor and control access to amenities.</p>
+                    <button class="menu-button" onclick="goToPage('amenities_management.php')">Let's Go!</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="pictures/annoucements.png" alt="Menu Image" class="menu-image-annoucement">
+                    <h2 class="menu-title">Announcements Management</h2>
+                    <p class="menu-desc">Post updates and manage important notices.</p>
+                    <button class="menu-button" onclick="goToPage('announcement_management.php')">Let's Go!</button>
+                </div>
+
+                <div class="card-item swiper-slide">
+                    <img src="pictures/complaint.png" alt="Menu Image" class="menu-image-report">
+                    <h2 class="menu-title">Report Management</h2>
+                    <p class="menu-desc">Review and manage resident complaints.</p>
+                    <button class="menu-button" onclick="goToPage('report_management.php')">Let's Go!</button>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.slider-wrapper', {
+            loop: true,
+            grabCursor: true,
+            spaceBetween: 30,
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                620: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                },
+            }
+        });
+
+        function goToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+
+    </script>
+</body>
+</html>

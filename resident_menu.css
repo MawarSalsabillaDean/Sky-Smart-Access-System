@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(75deg, rgb(232, 245, 253) 0%, rgb(232, 245, 253) 50%, rgb(252, 253, 255) 100%);
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 70px 55px;
+}
+
+.card-list .card-item {
+    color: #21264D;
+    user-select: none;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    backdrop-filter: blur(30px);
+    background: #bed5ed;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card-list .card-item .menu-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 40px;
+}
+
+.menu-image-car {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 40px;
+}
+
+.menu-image-news {
+    width: 180px;
+    height: 150px;
+    margin-bottom: 40px;
+}
+
+.card-list .card-item .menu-title {
+    text-align: center;
+}
+
+.card-list .card-item .menu-desc {
+    text-align: center;
+    font-size: 0.92rem;
+    color: #21264D;
+    font-weight: 300;
+    margin: 14px 0 40px;
+}
+
+.card-list .card-item .menu-button {
+    font-size: 1.05rem;
+    padding: 10px 35px;
+    color: #21264D;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .menu-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    color: #fff;
+    box-shadow: 0 0 35px;
+    letter-spacing: 0.07em;
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+    background: #21264D;
+    height: 10px;
+    width: 10px;
+}
+
+.slider-wrapper .swiper-slide-button {
+    color: #21264D;
+    margin-top: -50px;
+    transition: 0.2s ease;
+}
+
+.slider-wrapper .swiper-slide-button:hover {
+    color: #F0F8FF;
+}
+
+@media (max-width: 768px) {
+    .slider-wrapper {
+        margin: 0 10px 40px;
+    }
+
+    .slider-wrapper .swiper-slide-button {
+        display: none;
+    }
+
+    .card-list .card-item {
+        height: auto; /* Adjust height on smaller screens if needed */
+        padding: 20px; /* Adjust padding on smaller screens */
+    }
+}

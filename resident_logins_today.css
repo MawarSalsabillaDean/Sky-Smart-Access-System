@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+body, html {
+    height: 100%; /* Ensure full height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -285px; /* Adjusted to completely hide the sidebar */
+    height: 100%;
+    width: 285px; /* Adjusted width for mobile visibility */
+    background: linear-gradient(75deg, rgb(232, 245, 253) 0%, rgb(232, 245, 253) 50%, rgb(252, 253, 255) 100%);
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+    z-index: 1000; /* Make sure sidebar is above other content */
+}
+
+.sidebar.active {
+    left: 0; /* Move into view */
+}
+
+.sidebar .logo_content .logo {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease;
+}
+
+.logo_content .logo .logo_name {
+    font-family: "Quicksand", sans-serif;
+    color: #21264D;
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 12px;
+    margin-top: 5px;
+    pointer-events: none;
+    text-align: center;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.sidebar.active .logo_content .logo .logo_name {
+    opacity: 1;
+}
+
+.logo_content .logo .SSA_logo{
+    height: 17x;
+    width: 42px;
+}
+
+.sidebar #btn {
+    position: absolute;
+    color: #21264D;
+    top: 10px;
+    left: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar .nav_list {
+    list-style-type: none;
+}
+
+.sidebar ul {
+    margin-top: 25px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 45px;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50% , -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #FFF;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transform: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+.sidebar ul li a {
+    color: #21264D;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: #FFF;
+    background: #99b8c7;
+}
+
+.sidebar ul li a i {
+    height: 45px;
+    min-width: 45px;
+    border-radius: 12px;
+    line-height: 45px;
+    text-align: center;
+    transition: all 0.4s ease; /* Explicit transition for the icon */
+}
+
+.sidebar ul li a .material-symbols-outlined {
+    height: 45px;
+    min-width: 45px;
+    border-radius: 12px;
+    line-height: 45px;
+    text-align: center;
+    transition: all 0.4s ease; /* Explicit transition for the icon */
+}
+
+.sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .links_name {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+
+.sidebar .profile_content {
+    position: absolute;
+    color: #21264D;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .profile_content .profile {
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.4s ease;
+}
+
+sidebar.active .profile_content .profile {
+    background: #F0F8FF;
+}
+
+.profile_content .profile .profile_details {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.sidebar.active .profile .profile_details {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile .profile_details img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+}
+
+.profile .profile_details .user_details {
+    margin-left: 10px;
+}
+
+.profile .profile_details .name {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profile .profile_details .greeting {
+    font-size: 12px;
+}
+
+.profile #log_out {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: linear-gradient(75deg, rgb(232, 245, 253) 0%, rgb(232, 245, 253) 50%, rgb(252, 253, 255) 100%);
+    border: none !important;  /* This line removes the border */
+}
+
+.profile #log_out:hover {
+    background-color: transparent; /* Ensures the background color doesn't change on hover */
+
+}
+
+.sidebar.active .profile #log_out {
+    left: 88%;
+    background: none;
+}
+
+@media (min-width: 769px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 78px;
+        background: linear-gradient(75deg, rgb(232, 245, 253) 0%, rgb(232, 245, 253) 50%, rgb(252, 253, 255) 100%);
+        padding: 6px 14px;
+        transition: all 0.5s ease;
+    }
+    
+    .sidebar.active {
+       width: 285px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 50px; /* Adjust for smaller devices */
+    }
+
+    .sidebar.active {
+        width: 285px; /* Full sidebar width on active */
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 50px; /* Sidebar takes full width on smaller screens */
+    }
+
+    .sidebar.active ~ .container {
+        display: none; /* Hide container when sidebar is active to avoid overlap */
+    }
+}
+
+/* container */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF;
+}
+.container {
+    position: fixed;
+    top: 0;
+    left: 0; /* Start aligned with the page */
+    width: 100%; /* Initially take up full width */
+    height: 100%;
+    padding: 20px; /* Adds padding inside the container */
+    margin: 0 auto; /* Center-align the container (useful for larger screen adjustments) */
+    background-color: #FFF;
+    transition: left 0.5s, width 0.5s; /* Smooth transition */
+    box-sizing: border-box; /* Include padding in the width and height calculations */
+    overflow-y: auto;
+}
+
+/* Adjustments when sidebar is active */
+.sidebar.active ~ .container {
+    left: 285px; /* Shift right by the width of the expanded sidebar */
+    width: calc(100% - 285px); /* Reduce width by the width of the sidebar */
+}
+
+
+.container header {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #21264D;
+}
+
+.container header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #21264D;
+}
+
+.table-container {
+    width: 100%; /* Full width to use available space */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px; /* Increased padding for better spacing */
+    border-radius: 15px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;    
+    overflow-x: auto;
+    height: 645px;
+}
+
+table {
+    width: 100%; /* Adjust to 100% from fixed width to make it responsive */
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+    position: relative; /* Needed for absolute positioning of the tooltip */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+td:hover::after {
+    content: attr(data-title); /* Use the attribute for the tooltip */
+    position: absolute;
+    left: 100%;
+    white-space: nowrap; /* Ensure the tooltip does not wrap */
+    background: #21264D; /* Tooltip background */
+    color: white; /* Tooltip text color */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+tr:hover {
+    background-color: #ddedff;
+}
+
+/* Total scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px; /* Scrollbar width */
+    height: 10px; /* Scrollbar width */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 10px; /* Rounded corners on the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Handle color */
+    border-radius: 10px; /* Rounded corners on the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Handle color on hover */
+}
+
+@media (min-width: 769px)
+{
+    .container {
+        left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+ /* Responsive adjustments */
+ @media (max-width: 600px) {
+    .controls {
+        flex-direction: column; 
+    }
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container input[type="text"],
+    .search-container button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
